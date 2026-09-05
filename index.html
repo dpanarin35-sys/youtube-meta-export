@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Meta Exporter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div class="eyebrow">YOUTUBE DATA API</div>
+        <h1 id="app-title">Мета ваших роликов —<br />в одном экспорте.</h1>
+        <p>Подключите канал, выберите видео и скачайте полные данные в JSON или CSV.</p>
+      </section>
+
+      <section id="setup-card" class="card setup-card">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">ПЕРВЫЙ ШАГ</p>
+            <h2>Подключение к YouTube</h2>
+          </div>
+          <span class="step">01</span>
+        </div>
+        <p class="muted">Войдите через Google, чтобы выгрузить данные канала и сведения о дорожках субтитров.</p>
+        <p class="scope-note">Для чтения дорожек и текста субтитров запрашивается доступ <code>youtube.force-ssl</code>. Приложение не изменяет, не публикует и не удаляет ролики.</p>
+        <label class="consent"><input id="policy-consent" type="checkbox" /> <span>Я принимаю <a href="terms.html" target="_blank">Условия использования</a> и <a href="privacy.html" target="_blank">Политику конфиденциальности</a>.</span></label>
+        <button id="sign-in" class="button primary" type="button" disabled>
+          <span class="google-mark">G</span> Войти через Google
+        </button>
+        <p id="auth-status" class="status" role="status">Загружаю настройки приложения…</p>
+      </section>
+
+      <section id="workspace" class="workspace hidden" aria-live="polite">
+        <header class="channel-bar card">
+          <div class="channel-identity">
+            <img id="channel-avatar" class="avatar" alt="" />
+            <div>
+              <p class="section-kicker">ПОДКЛЮЧЁННЫЙ КАНАЛ</p>
+              <h2 id="channel-name">Загрузка…</h2>
+              <p id="channel-stats" class="muted"></p>
+            </div>
+          </div>
+          <button id="sign-out" class="button text-button" type="button">Отозвать доступ и удалить данные</button>
+        </header>
+
+        <section class="toolbar">
+          <div>
+            <p class="section-kicker">02 · ВИДЕО</p>
+            <h2><span id="visible-count">0</span> роликов</h2>
+          </div>
+          <div class="toolbar-actions">
+            <input id="search" type="search" placeholder="Найти по названию" />
+            <button id="select-all" class="button secondary" type="button">Выбрать все</button>
+          </div>
+        </section>
+
+        <section id="video-list" class="video-list" aria-label="Список видео"></section>
+        <div id="list-status" class="status list-status"></div>
+
+        <section class="export-panel card">
+          <div>
+            <p class="section-kicker">03 · ЭКСПОРТ</p>
+            <h2>Выбрано: <span id="selected-count">0</span></h2>
+            <p class="muted">Данные запрашиваются заново перед скачиванием, поэтому статистика будет актуальной.</p>
+            <label class="caption-option"><input id="include-caption-text" type="checkbox" checked /> Включить текст субтитров <span>медленнее, расходует квоту YouTube</span></label>
+          </div>
+          <div class="export-actions">
+            <button id="export-json" class="button secondary" type="button" disabled>Скачать JSON</button>
+            <button id="export-csv" class="button primary" type="button" disabled>Скачать CSV</button>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>Работает с YouTube Data API</span>
+      <a href="privacy.html">Конфиденциальность</a>
+      <a href="terms.html">Условия использования</a>
+      <a href="https://www.youtube.com/t/terms" target="_blank" rel="noreferrer">Условия YouTube</a>
+    </footer>
+
+    <template id="video-template">
+      <article class="video-card">
+        <label class="checkbox-wrap"><input class="video-checkbox" type="checkbox" /><span></span></label>
+        <img class="thumbnail" alt="" loading="lazy" />
+        <div class="video-details">
+          <h3 class="video-title"></h3>
+          <p class="video-meta"></p>
+          <p class="video-id"></p>
+        </div>
+        <button class="details-button" type="button">Мета</button>
+      </article>
+    </template>
+
+    <dialog id="metadata-dialog">
+      <div class="dialog-header"><h2>Метаданные ролика</h2><button id="close-dialog" class="icon-button" aria-label="Закрыть">×</button></div>
+      <pre id="metadata-output"></pre>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="app.js"></script>
+  </body>
+</html>

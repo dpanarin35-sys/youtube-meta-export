@@ -1,0 +1,46 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+      APP_NAME: ${{ vars.APP_NAME }}
+      APP_OPERATOR: ${{ vars.APP_OPERATOR }}
+      CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Build static artifact
+        run: |
+          test -n "$GOOGLE_CLIENT_ID" || (echo "Set repository variable GOOGLE_CLIENT_ID before deployment." && exit 1)
+          mkdir _site
+          cp index.html app.js styles.css policy.js privacy.html terms.html _site/
+          node -e "const fs=require('fs'); const config={googleClientId:process.env.GOOGLE_CLIENT_ID,appName:process.env.APP_NAME||'YouTube Meta Exporter',appOperator:process.env.APP_OPERATOR||'Application owner',contactEmail:process.env.CONTACT_EMAIL||'support@example.com'}; fs.writeFileSync('_site/config.js', 'window.APP_CONFIG = '+JSON.stringify(config, null, 2)+';\\n');"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
