@@ -27,7 +27,9 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Build static artifact
         run: |
-          test -n "$GOOGLE_CLIENT_ID" || (echo "Set repository variable GOOGLE_CLIENT_ID before deployment." && exit 1)
+          for variable in GOOGLE_CLIENT_ID APP_NAME APP_OPERATOR CONTACT_EMAIL; do
+            test -n "${!variable}" || (echo "Set repository variable $variable before deployment." && exit 1)
+          done
           mkdir _site
           cp index.html app.js styles.css policy.js privacy.html terms.html _site/
           node -e "const fs=require('fs'); const config={googleClientId:process.env.GOOGLE_CLIENT_ID,appName:process.env.APP_NAME||'YouTube Meta Exporter',appOperator:process.env.APP_OPERATOR||'Application owner',contactEmail:process.env.CONTACT_EMAIL||'support@example.com'}; fs.writeFileSync('_site/config.js', 'window.APP_CONFIG = '+JSON.stringify(config, null, 2)+';\\n');"
