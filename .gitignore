@@ -2,6 +2,7 @@ node_modules/
 .tools/
 audit/.browser-profile/
 audit/.browser-profile-interactive/
+audit/screenshots/oauth-consent.png
 .env
 config.js
 client_secret_*.json

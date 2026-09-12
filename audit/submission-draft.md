@@ -49,7 +49,7 @@ The intended one-time export covers a channel with 771 videos. With one caption 
 2. `privacy-policy.png` — Privacy Policy, including data handling, deletion, Google Privacy Policy link, and contact email.
 3. `terms-of-use.png` — Terms of Use, including the YouTube Terms link.
 4. `oauth-login.png` — Google OAuth flow initiated from the application.
-5. `oauth-consent.png` — Google permission screen after account selection, showing the requested access.
+5. `oauth-consent-redacted.png` — Google permission screen after account selection, showing the requested access; the account email is redacted.
 6. `export-caption-option.png` — selected videos and the unchecked "Include caption text" option.
 7. `revoke-access.png` — signed-in view with the "Revoke access and delete data" action.
 8. `architecture.svg` — technical data-flow diagram included in this directory.
