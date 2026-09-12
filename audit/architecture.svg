@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">YouTube Meta Exporter data flow</title>
+  <desc id="desc">The user browser is served static files by GitHub Pages, authenticates directly with Google OAuth, fetches channel data from YouTube Data API, and downloads files locally. The hosting service stores no user data.</desc>
+  <style>
+    text { font-family: Arial, sans-serif; fill: #17202f; } .title { font-size: 26px; font-weight: 700; } .label { font-size: 18px; font-weight: 700; } .body { font-size: 14px; fill: #516078; } .box { stroke: #d8dee9; stroke-width: 2; rx: 18; } .arrow { stroke: #f04f32; stroke-width: 3; fill: none; marker-end: url(#arrowhead); } .note { font-size: 13px; fill: #667085; }
+  </style>
+  <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#f04f32" /></marker></defs>
+  <rect width="1200" height="560" fill="#f7f8fb" />
+  <text x="60" y="66" class="title">YouTube Meta Exporter — data flow</text>
+  <rect x="60" y="155" width="230" height="170" class="box" fill="#ffffff" />
+  <text x="85" y="202" class="label">User browser</text>
+  <text x="85" y="233" class="body">Selects videos and explicitly</text><text x="85" y="254" class="body">opts in to caption text.</text><text x="85" y="294" class="body">Downloads JSON / CSV locally.</text>
+  <rect x="440" y="155" width="290" height="170" class="box" fill="#ffffff" />
+  <text x="465" y="202" class="label">Google OAuth + YouTube API</text>
+  <text x="465" y="233" class="body">Google authorizes the user.</text><text x="465" y="254" class="body">Browser calls official YouTube APIs</text><text x="465" y="275" class="body">with a session-only OAuth token.</text>
+  <rect x="880" y="155" width="260" height="170" class="box" fill="#ffffff" />
+  <text x="905" y="202" class="label">GitHub Pages</text>
+  <text x="905" y="233" class="body">Serves static HTML, CSS, JS,</text><text x="905" y="254" class="body">and public OAuth Client ID.</text><text x="905" y="294" class="body">No API data or tokens stored.</text>
+  <path d="M290 215 C340 215, 380 215, 440 215" class="arrow" /><text x="326" y="197" class="note">OAuth + API requests</text>
+  <path d="M880 285 C820 285, 790 285, 730 285" class="arrow" /><text x="753" y="316" class="note">static files</text>
+  <rect x="60" y="395" width="1080" height="84" rx="14" fill="#fff3ef" stroke="#f7c8bd" />
+  <text x="88" y="432" class="label" fill="#b6331c">Retention and sharing</text>
+  <text x="88" y="458" class="body">The service does not persist or share YouTube API data. Exported files remain on the user’s device and can be deleted by that user.</text>
+</svg>
