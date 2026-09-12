@@ -2,6 +2,7 @@ node_modules/
 .tools/
 audit/.browser-profile/
 audit/.browser-profile-interactive/
+audit/.pdf-chrome-profile/
 audit/screenshots/oauth-consent.png
 .env
 config.js

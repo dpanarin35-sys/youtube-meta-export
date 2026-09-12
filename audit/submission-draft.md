@@ -55,3 +55,9 @@ The intended one-time export covers a channel with 771 videos. With one caption 
 8. `architecture.svg` — technical data-flow diagram included in this directory.
 
 Do not upload a screenshot containing OAuth tokens, Client Secret values, video private information, or local file paths.
+
+## Current form file mapping
+
+- Upload `homepage-policy-links.png`, `privacy-policy.png`, and `terms-of-use.png` to their respective required evidence fields.
+- Upload `oauth-evidence.pdf` to the OAuth conditional-evidence field. It contains the current Google consent screen with the account email redacted and the signed-in screen with the access-revocation action; channel-specific details are redacted.
+- The audit form accepts JPEG, PNG, or PDF files. Do not upload `architecture.svg` to the form.
