@@ -1,5 +1,6 @@
 node_modules/
 .tools/
+audit/.browser-profile/
 .env
 config.js
 client_secret_*.json
