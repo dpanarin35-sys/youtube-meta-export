@@ -2,7 +2,7 @@
 // Copy it to config.js only for fully static local hosting. Do not put any client secret here.
 window.APP_CONFIG = {
   googleClientId: '1234567890-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com',
-  appName: 'YouTube Meta Exporter',
+  appName: 'Channel Meta Exporter',
   appOperator: 'Your legal name or company name',
   contactEmail: 'support@example.com'
 };

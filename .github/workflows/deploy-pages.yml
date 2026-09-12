@@ -32,7 +32,7 @@ jobs:
           done
           mkdir _site
           cp index.html app.js styles.css policy.js privacy.html terms.html _site/
-          node -e "const fs=require('fs'); const config={googleClientId:process.env.GOOGLE_CLIENT_ID,appName:process.env.APP_NAME||'YouTube Meta Exporter',appOperator:process.env.APP_OPERATOR||'Application owner',contactEmail:process.env.CONTACT_EMAIL||'support@example.com'}; fs.writeFileSync('_site/config.js', 'window.APP_CONFIG = '+JSON.stringify(config, null, 2)+';\\n');"
+          node -e "const fs=require('fs'); const config={googleClientId:process.env.GOOGLE_CLIENT_ID,appName:process.env.APP_NAME||'Channel Meta Exporter',appOperator:process.env.APP_OPERATOR||'Application owner',contactEmail:process.env.CONTACT_EMAIL||'support@example.com'}; fs.writeFileSync('_site/config.js', 'window.APP_CONFIG = '+JSON.stringify(config, null, 2)+';\\n');"
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

@@ -1,6 +1,6 @@
 async function loadPublicPolicyInfo() {
   const values = {
-    appName: 'YouTube Meta Exporter',
+    appName: 'Channel Meta Exporter',
     appOperator: 'Владелец приложения не настроен',
     contactEmail: 'Контактный адрес не настроен'
   };
@@ -12,7 +12,7 @@ async function loadPublicPolicyInfo() {
     }
   } catch { /* Static policy text remains available if the server is unavailable. */ }
 
-  document.querySelectorAll('[data-app-name]').forEach((node) => { node.textContent = values.appName || 'YouTube Meta Exporter'; });
+  document.querySelectorAll('[data-app-name]').forEach((node) => { node.textContent = values.appName || 'Channel Meta Exporter'; });
   document.querySelectorAll('[data-app-operator]').forEach((node) => { node.textContent = values.appOperator || 'Владелец приложения не настроен'; });
   document.querySelectorAll('[data-contact-email]').forEach((node) => {
     const email = values.contactEmail || 'Контактный адрес не настроен';

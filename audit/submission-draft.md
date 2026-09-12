@@ -4,7 +4,7 @@ Use this document as the basis for the YouTube API Services Audit and Quota Exte
 
 ## Applicant and client
 
-- **API client name:** YouTube Meta Exporter
+- **API client name:** Channel Meta Exporter
 - **Public URL:** https://dpanarin35-sys.github.io/youtube-meta-export/
 - **Privacy Policy:** https://dpanarin35-sys.github.io/youtube-meta-export/privacy.html
 - **Terms of Use:** https://dpanarin35-sys.github.io/youtube-meta-export/terms.html
@@ -14,7 +14,7 @@ Use this document as the basis for the YouTube API Services Audit and Quota Exte
 
 ## Product description
 
-YouTube Meta Exporter is a browser-based tool for channel owners. A user signs in with Google OAuth, sees the videos belonging to the YouTube channel associated with that Google account, selects one or more videos, and downloads the selected metadata as JSON or CSV.
+Channel Meta Exporter is a browser-based tool for channel owners. A user signs in with Google OAuth, sees the videos belonging to the YouTube channel associated with that Google account, selects one or more videos, and downloads the selected metadata as JSON or CSV.
 
 The product's independent value is a structured, user-controlled export of the channel owner's own metadata, statistics, status information, and — only when the user explicitly enables the option — caption-track metadata and caption text. It does not play, download, modify, publish, delete, or otherwise manage YouTube videos.
 

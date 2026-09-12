@@ -1,5 +1,5 @@
 {
-  "name": "youtube-meta-exporter",
+  "name": "channel-meta-exporter",
   "version": "1.0.0",
   "private": true,
   "description": "Export metadata from every video on the signed-in YouTube channel.",

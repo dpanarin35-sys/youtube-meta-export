@@ -1,4 +1,4 @@
-# YouTube Meta Exporter
+# Channel Meta Exporter
 
 Node.js-приложение для входа через Google, просмотра всех роликов YouTube-канала и выгрузки подробных метаданных выбранных видео или всего канала в JSON/CSV.
 

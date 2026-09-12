@@ -22,7 +22,7 @@ function resolveGoogleClientId() {
 }
 
 const clientId = resolveGoogleClientId();
-const appName = process.env.APP_NAME || 'YouTube Meta Exporter';
+const appName = process.env.APP_NAME || 'Channel Meta Exporter';
 const appOperator = process.env.APP_OPERATOR || '';
 const contactEmail = process.env.CONTACT_EMAIL || '';
 
@@ -47,4 +47,4 @@ app.get('/api/config', (_request, response) => {
   });
 });
 
-app.listen(port, () => console.log(`YouTube Meta Exporter is running at http://localhost:${port}`));
+app.listen(port, () => console.log(`Channel Meta Exporter is running at http://localhost:${port}`));
