@@ -1,6 +1,6 @@
 # YouTube API Services — Audit and Quota Extension Draft
 
-Use this document as the basis for the YouTube API Services Audit and Quota Extension Form. Replace bracketed fields with the legal details of the applicant before submission.
+Use this document as the basis for the YouTube API Services Audit and Quota Extension Form.
 
 ## Applicant and client
 
@@ -8,7 +8,7 @@ Use this document as the basis for the YouTube API Services Audit and Quota Exte
 - **Public URL:** https://dpanarin35-sys.github.io/youtube-meta-export/
 - **Privacy Policy:** https://dpanarin35-sys.github.io/youtube-meta-export/privacy.html
 - **Terms of Use:** https://dpanarin35-sys.github.io/youtube-meta-export/terms.html
-- **Developer / legal entity:** [replace with legal name or company]
+- **Developer / legal entity:** Panarin Daniil Viktorovich (individual)
 - **Contact email:** dpanarin35@gmail.com
 - **Requested quota:** 250,000 units per day
 
